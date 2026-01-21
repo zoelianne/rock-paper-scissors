@@ -9,6 +9,9 @@ function getComputerChoice() {
     }
 }
 
-console.log(getComputerChoice());
-console.log(getComputerChoice());
-console.log(getComputerChoice());
+function getHumanChoice() {
+    let choice = prompt("Choose your fighter! Choose rock, paper, or scissors to play");
+    return choice;
+}
+
+console.log(getHumanChoice());
