@@ -14,4 +14,28 @@ function getHumanChoice() {
     return choice;
 }
 
-console.log(getHumanChoice());
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+
+    if (humanChoice === computerChoice) {
+        console.log("Tie! No points given.")
+    } else if (
+        (humanChoice === "rock" && computerChoice === "scissors") ||
+        (humanChoice === "scissors" && computerChoice === "paper") ||
+        (humanChoice === "paper" && computerChoice === "rock")
+    ) {
+        humanScore++;
+        console.log(`You Win! ${humanChoice} beats ${computerChoice}`);
+    } else {
+        computerScore++;
+        console.log(`You Lose ${computerChoice} beats ${humanChoice}`);
+    }
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
